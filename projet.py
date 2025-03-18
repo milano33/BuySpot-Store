@@ -1,9 +1,12 @@
 from random import *
-import pickle
+
+import sqlite3
+
+connexion = sqlite3.connect('voiture.db')
 garage = []
-couleur = ["Rouge", "Bleu", "Vert", "Blanc", "Noir", "Gris"]
+
             
-def ajouter(garage):
+def ajouter(garage, connexion):
     print("Ajouter un véhicule")
     marque = input("Marque : ")
     modele = input("Modele : ")
@@ -20,18 +23,38 @@ def ajouter(garage):
     hauteur = float(input("Hauteur : "))
     longueur = float(input("Longueur : "))
     largeur = float(input("Largeur : "))
-    garage.append([modele,[marque,modele,annee,kilometrage,puissance,poids,couleur,etat,prix,type,critair,coffre,hauteur,longueur,largeur]])
-    return garage
+    curseur = connexion.cursor()
+    curseur.execute("""INSERT INTO voiture (marque, modele, annee, kilometrage, puissance, poids, couleur, etat, prix, type, critair, coffre, hauteur, longueur, largeur)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (marque, modele, annee, kilometrage, puissance, poids, couleur, etat, prix, type, critair, coffre, hauteur, longueur, largeur))
 
-def aficher(garage):
-    print("Liste des véhicules")
-    for elt in garage:
-        print(elt[0])
+def aficher(connexion):
+    curse = connexion.cursor()
+    curse.execute("SELECT * FROM voiture")
+    r = curse.fetchall()
+    for ligne in r:
+        print(f"ID: {ligne[0]}, marque: {ligne[1]}, modele: {ligne[2]}, annee: {ligne[3]}, kilometrage: {ligne[4]}, puissance: {ligne[5]}, poids: {ligne[6]}, couleur: {ligne[7]}, etat: {ligne[8]}, prix: {ligne[9]}, type: {ligne[10]}, critair: {ligne[11]}, coffre: {ligne[12]}, hauteur: {ligne[13]}, longueur: {ligne[14]}, largeur: {ligne[15]}")
+
+def rechercher(n, connexion):
+    liste = []
+    m = {}
+    curseur = connexion.cursor()
+    curseur.execute("SELECT * FROM voiture")
+    for l in curseur:
+        for i in range(len(n)):
+            if i == l:
+                compt += 1
+                liste.append(compt)
+    for i in range(len(liste)):
+        m[i] = liste[i]
+    return m
         
-ajouter(garage)    
-ajouter(garage)
-aficher(garage)
-"""def enregistrer(dico):
-    with open(garage.plk; "wb") as i:
-        pickle.dump(garage, i)
-    """
+
+def creer_graphe(connexion):
+    graphe = {}
+    
+    pass
+        
+ajouter(garage, connexion)    
+aficher(connexion)
+
+connexion.close()
