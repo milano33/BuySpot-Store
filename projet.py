@@ -4,7 +4,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 connexion = sqlite3.connect('voiture.db')
-            
+       
 def ajouter(connexion):
     print("Ajouter un véhicule")
     marque = input("Marque : ")
@@ -23,17 +23,34 @@ def ajouter(connexion):
     longueur = float(input("Longueur : "))
     largeur = float(input("Largeur : "))
     curseur = connexion.cursor()
-    curseur.execute('''INSERT INTO voiture (marque, modele, annee, kilometrage, puissance, poids, couleur, etat, prix, type, critair, coffre, hauteur, longueur, largeur)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', (marque, modele, annee, kilometrage, puissance, poids, couleur, etat, prix, type, critair, coffre, hauteur, longueur, largeur))
+    curseur.execute("INSERT INTO voiture(marque, modele, annee, kilometrage, puissance, poids, couleur, etat, prix, type, critair, coffre, hauteur, longueur, largeur) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (marque, modele, annee, kilometrage, puissance, poids, couleur, etat, prix, type, critair, coffre, hauteur, longueur, largeur))
     connexion.commit()
 
-def supprimer():
-    pass
+def supprimer(connexion):
+    print("Supprimer un véhicule")
+    id = int(input("ID du véhicule à supprimer : "))
+    curseur = connexion.cursor()
+    curseur.execute("DELETE FROM voiture WHERE id = ?", (id,))
+    connexion.commit()
+    if connexion.total_changes > 0:
+        print("Véhicule supprimé avec succès.")
+    else:
+        print("Aucun véhicule trouvé avec cet ID.")
+
 def afficher(connexion):
     curse = connexion.cursor()
-    curse.execute("SELECT * FROM voiture")
-    imprimer(curse)
-                
+    print("Voulez vous triez les vehicules ? (O/N)")
+    choix = input("Choix : ")
+    if choix == "O":
+        tri(connexion)
+    elif choix == "N":
+        curse.execute("SELECT * FROM voiture")
+        imprimer(curse)
+    else:
+        print("Choix invalide.")
+        curse.close()
+        return
+             
 def rechercher(connexion):
     print("Rechercher par : ")
     print("1. Marque")
@@ -103,7 +120,7 @@ def creer_graphe(connexion):
     curseur = connexion.cursor()
     curseur.execute("SELECT * FROM voiture")  
     for row in curseur:
-        car_id = row[0]
+        car_id = row[2]
         owner_id = row[1]
         graphe.add_node(car_id, label="car")
         graphe.add_node(owner_id, label="owner")
@@ -143,19 +160,37 @@ def imprimer(curse):
         headers = ["Marque", "Modele", "Annee", "Kilometrage", "Puissance", "Poids", "Couleur", "Etat", "Prix", "Type", "Crit'air", "Coffre", "Hauteur", "Longueur", "Largeur"]
         print(tabulate(resultats, headers=headers, tablefmt="grid", stralign='center', numalign='center'))
 
+def tri(connexion) :
+    curse = connexion.cursor()
+    print("Trier par : ")
+    print("1. Prix croissant")
+    print("2. Prix decroissant")
+    choix = int(input("Choix : "))
+    if choix == 1:
+        curse.execute("SELECT * FROM voiture ORDER BY prix ASC")
+    elif choix == 2:
+        curse.execute("SELECT * FROM voiture ORDER BY prix DESC")
+    else:
+        print("Choix invalide.")
+        curse.close()
+        return
+    imprimer(curse)
+
 while True :
-    print("1. Ajouter les criteres")
-    print("2. Ajouter un vehicule")
-    print("3. Afficher les vehicules")
-    print("4. Rechercher un vehicule")
+    print("1. Ajouter un vehicule")
+    print("2. Afficher les vehicules")
+    print("3. Rechercher un vehicule")
+    print("4. Supprimer un vehicule")
     print("5. Quitter")
     choix = int(input("Choix : "))
-    if choix == 2:
+    if choix == 1:
         ajouter(connexion)
-    elif choix == 3:
+    elif choix == 2:
         afficher(connexion)
-    elif choix == 4:
+    elif choix == 3:
         rechercher(connexion)
+    elif choix == 4:
+        supprimer(connexion)
     elif choix == 5:
         break
     else:
