@@ -19,54 +19,44 @@ It allows users to browse **`253 products`**, add items to **`cart`** or **`favo
 
 With a **`responsive UI`**, and interactive features like **`search autocomplete`** and **`product sliders`**, BuySpot delivers a modern shopping solution.
 
-<!-- Row 1 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img src="https://github.com/user-attachments/assets/eb54e607-9da6-4b5d-abe8-5fd1d224e8f4" alt="Screenshot-1" style="width: 48%; margin-right: 1%;">
-    <img src="https://github.com/user-attachments/assets/36fa54f1-4654-46a3-84ce-1a6ca639a530" alt="Screenshot-2" style="width: 48%;">
+<!-- Screenshots Section -->
+<div align="center">
+
+  <!-- Row 1 -->
+  <img src="./assets/img/screenshots/BuySpot1.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot2.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot3.png" width="250">
+
+  <!-- Row 2 -->
+  <br>
+  <img src="./assets/img/screenshots/BuySpot4.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot5.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot6.png" width="250">
+
+  <!-- Row 3 -->
+  <br>
+  <img src="./assets/img/screenshots/BuySpot7.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot8.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot9.png" width="250">
+
+  <!-- Row 4 -->
+  <br>
+  <img src="./assets/img/screenshots/BuySpot10.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot11.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot12.png" width="250">
+
+  <!-- Row 5 -->
+  <br>
+  <img src="./assets/img/screenshots/BuySpot13.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot14.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot15.png" width="250">
+
+  <!-- Row 6 -->
+  <br>
+  <img src="./assets/img/screenshots/BuySpot16.png" width="250">
+
 </div>
 
-<!-- Row 2 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img src="https://github.com/user-attachments/assets/02da35e6-b80a-4415-ba66-56d9dec6c1f4" alt="Screenshot-3" style="width: 48%; margin-right: 1%;">
-    <img src="https://github.com/user-attachments/assets/13094d93-9e98-436b-9579-6b11c11eb704"  alt="Screenshot-4" style="width: 48%;">
-</div>
-
-<!-- Row 3 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img src="https://github.com/user-attachments/assets/fc23c1b0-0c0a-4f2b-880e-c8f35470451c" alt="Screenshot-5" style="width: 48%; margin-right: 1%;">
-    <img src="https://github.com/user-attachments/assets/0ebd3699-a727-4d94-8e51-f5360b0a9af6" alt="Screenshot-6" style="width: 48%;">
-</div>
-
-<!-- Row 4 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img src="https://github.com/user-attachments/assets/6f71fd60-33c1-4a09-9844-3d35e9d58b93" alt="Screenshot-7" style="width: 48%; margin-right: 1%;">
-    <img src="https://github.com/user-attachments/assets/67fefeab-4703-4841-b270-9781526dc1e2" alt="Screenshot-8" style="width: 48%;">
-</div>
-
-<!-- Row 5 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img  src="https://github.com/user-attachments/assets/ba54c7fc-9783-46c9-8718-f7613beed8cf"  alt="Screenshot-9" style="width: 48%; margin-right: 1%;">
-    <img  src="https://github.com/user-attachments/assets/369396d2-2779-4cce-9631-4fd6c2f608d8" alt="Screenshot-10" style="width: 48%;">
-</div>
-
-<!-- Row 6 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img  src="https://github.com/user-attachments/assets/de1621a5-74a5-4d28-92de-9d543fa027e6" alt="Screenshot-11" style="width: 48%; margin-right: 1%;">
-    <img src="https://github.com/user-attachments/assets/75b91c64-60cf-42af-8165-01af6aa4bf1f" alt="Screenshot-12" style="width: 48%;">
-</div>
-
-
-<!-- Row 7 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img src="https://github.com/user-attachments/assets/b2278727-f9fc-4930-979a-cff434c233de" alt="Screenshot-13" style="width: 48%; margin-right: 1%;">
-    <img  src="https://github.com/user-attachments/assets/58393163-6c85-496a-95f4-458b9b5e50b7" alt="Screenshot-14" style="width: 48%;">
-</div>
-
-<!-- Row 8 -->
-<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-    <img src="https://github.com/user-attachments/assets/6ee2e542-bf5a-4d4a-a554-d589aa03b728" alt="Screenshot-15" style="width: 48%; margin-right: 1%;">
-    <img src="https://github.com/user-attachments/assets/b2ab0825-e6cf-4299-bf1a-fad88adcb6bf" alt="Screenshot-16" style="width: 48%;">
-</div>
 
 ---
 
