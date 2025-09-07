@@ -2,63 +2,94 @@
 
 # 🛍️ BuySpot Store - Your Ultimate E-Commerce Experience
 
-<p align="center">
-
-![GitHub stars](https://img.shields.io/github/stars/OmarrSakr/BuySpot_Store?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/OmarrSakr/BuySpot_Store?style=for-the-badge)
-![Pull Requests](https://img.shields.io/github/issues-pr/OmarrSakr/BuySpot_Store?color=orange&style=for-the-badge)
-![Contributors](https://img.shields.io/github/contributors/OmarrSakr/BuySpot_Store?color=2b9348&style=for-the-badge)
-![License](https://img.shields.io/github/license/OmarrSakr/BuySpot_Store?style=for-the-badge)
-![Top Language](https://img.shields.io/github/languages/top/OmarrSakr/BuySpot_Store?style=for-the-badge)
-
+<p>
+  <table>
+    <tr>
+      <td><img class="badge" src="https://img.shields.io/github/stars/OmarrSakr/BuySpot-Store?style=plastic&color=ff8716" alt="GitHub stars"></td>
+      <td><img class="badge" src="https://img.shields.io/github/forks/OmarrSakr/BuySpot-Store?style=plastic&color=ff8716" alt="GitHub forks"></td>
+      <td><img class="badge" src="https://komarev.com/ghpvc/?username=OmarrSakr&style=plastic&color=blue&label=Views" alt="Repo Views"></td>
+    </tr>
+    <tr>
+      <td><img class="badge" src="https://img.shields.io/github/issues-pr/OmarrSakr/BuySpot-Store?color=orange&style=plastic" alt="Pull Requests"></td>
+      <td><img class="badge" src="https://img.shields.io/github/contributors/OmarrSakr/BuySpot-Store?color=2b9348&style=plastic" alt="Contributors"></td>
+      <td><img class="badge" src="https://img.shields.io/github/license/OmarrSakr/BuySpot-Store?style=plastic" alt="License"></td>
+    </tr>
+    <tr>
+      <td><img class="badge" src="https://img.shields.io/github/last-commit/OmarrSakr/BuySpot-Store?style=plastic" alt="Last Commit"></td>
+      <td><img class="badge" src="https://img.shields.io/github/repo-size/OmarrSakr/BuySpot-Store?style=plastic" alt="Repo Size"></td>
+      <td><img class="badge" src="https://img.shields.io/github/languages/top/OmarrSakr/BuySpot-Store?style=plastic" alt="Top Language"></td>
+    </tr>
+  </table>
+  <br>
+  <b>BuySpot-Store</b>: متجر إلكتروني بسيط وسهل الاستخدام لبيع المنتجات بأمان وسرعة. 🛒
+  <br>
+  <a href="https://omarrsakr.github.io/BuySpot-Store">Live Demo</a> •
+  <a href="https://github.com/OmarrSakr/BuySpot-Store/wiki">Documentation</a> •
+  <a href="https://github.com/OmarrSakr/BuySpot-Store/issues">Report Issues</a>
 </p>
-</div>
+<br>
 
 **`BuySpot`** Store is a dynamic e-commerce platform built with core web technologies (**`HTML`**, **`CSS`**, **`JavaScript`**) to provide a seamless and intuitive shopping experience.  
 It allows users to browse **`253 products`**, add items to **`cart`** or **`favorites`**, submit **`reviews`**, manage **`profiles`**, and complete **`purchases`**.
 
-With a **`responsive UI`**, and interactive features like **`search autocomplete`** and **`product sliders`**, BuySpot delivers a modern shopping solution.
-
-<!-- Screenshots Section -->
-<div align="center">
-
-  <!-- Row 1 -->
-  <img src="./assets/img/screenshots/BuySpot1.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot2.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot3.png" width="250">
-
-  <!-- Row 2 -->
-  <br>
-  <img src="./assets/img/screenshots/BuySpot4.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot5.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot6.png" width="250">
-
-  <!-- Row 3 -->
-  <br>
-  <img src="./assets/img/screenshots/BuySpot7.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot8.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot9.png" width="250">
-
-  <!-- Row 4 -->
-  <br>
-  <img src="./assets/img/screenshots/BuySpot10.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot11.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot12.png" width="250">
-
-  <!-- Row 5 -->
-  <br>
-  <img src="./assets/img/screenshots/BuySpot13.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot14.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot15.png" width="250">
-
-  <!-- Row 6 -->
-  <br>
-  <img src="./assets/img/screenshots/BuySpot16.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot17.png" width="250">
-  <img src="./assets/img/screenshots/BuySpot18.png" width="250">
+<img src="./assets/img/demo.gif" alt="BuySpot Store Demo" width="600">
 
 </div>
 
+<div align="center">
+
+## 📊 Project Stats
+- 🛍️ **Products**: 253
+- ⭐ **Average Rating**: 4.8/5
+- 🌐 **Visitors**: (Add your views count from Insights or hits.sh)
+
+---
+## 🧑‍💻 Tech Stack
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Swiper-6332F6?style=flat&logo=swiper&logoColor=white" alt="Swiper">
+  <img src="https://img.shields.io/badge/SweetAlert2-FF5733?style=flat&logo=sweetalert2&logoColor=white" alt="SweetAlert2">
+  <img src="https://img.shields.io/badge/Font_Awesome-339AF0?style=flat&logo=fontawesome&logoColor=white" alt="Font Awesome">
+</p>
+
+---
+
+## 📷 Screenshots
+<table>
+  <tr>
+    <td><img src="./assets/img/screenshots/BuySpot1.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot2.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot3.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot4.png" width="200"></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/img/screenshots/BuySpot5.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot6.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot7.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot8.png" width="200"></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/img/screenshots/BuySpot9.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot10.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot14.png" width="200"></td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/img/screenshots/BuySpot11.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot12.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot13.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot15.png" width="200"></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/img/screenshots/BuySpot16.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot17.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot18.png" width="200"></td>
+    <td><img src="./assets/img/screenshots/BuySpot21.png" width="200"></td>
+  </tr>
+</table>
+</div>
 
 ---
 
@@ -124,43 +155,43 @@ Check out the live demo of **BuySpot Store** at 👉 [BuySpot Store Demo](https:
 
 ```
 BuySpot_Store/
-├── Assets/
-│   ├── CSS/
-│   │   ├── PrintOrder.css
-│   │   ├── product_details.css
-│   │   ├── Secure_Shopping.css
-│   │   ├── settingsProfile.css
-│   │   ├── Signup_Login.css
-│   │   ├── style.css
-│   ├── img/
-│   │   ├── product/ (253 product images)
-│   │   ├── screenshots/ (16 screenshots)
-│   │   ├── Avatar.webp
-│   │   ├── banner3_1.png
-│   ├── JS/
-│   │   ├── Checkoutdetails.js
-│   │   ├── comments.js
-│   │   ├── ForgotPassword.js
-│   │   ├── items_home.js
-│   │   ├── Login.js
-│   │   ├── main.js
-│   │   ├── PrintOrder.js
-│   │   ├── products_list.js
-│   │   ├── product_details.js
-│   │   ├── Signup.js
-│   │   ├── Swiper.js
-│   │   ├── user-data-sync.js
+├── assets/
+│ ├── CSS/
+│ │ ├── PrintOrder.css
+│ │ ├── product_details.css
+│ │ ├── Secure_Shopping.css
+│ │ ├── settingsProfile.css
+│ │ ├── Signup_Login.css
+│ │ ├── style.css
+│ ├── img/
+│ │ ├── product/ (253 product images)
+│ │ ├── screenshots/ (16 screenshots)
+│ │ ├── Avatar.webp
+│ │ ├── banner3_1.png
+│ ├── JS/
+│ │ ├── Checkoutdetails.js
+│ │ ├── comments.js
+│ │ ├── ForgotPassword.js
+│ │ ├── items_home.js
+│ │ ├── Login.js
+│ │ ├── main.js
+│ │ ├── PrintOrder.js
+│ │ ├── products_list.js
+│ │ ├── product_details.js
+│ │ ├── Signup.js
+│ │ ├── Swiper.js
+│ │ ├── user-data-sync.js
 ├── pages/
-│   ├── Checkoutdetails.html
-│   ├── comments.html
-│   ├── ForgotPassword.html
-│   ├── Login.html
-│   ├── PrintOrder.html
-│   ├── ProceedToBuy.html
-│   ├── products_list.html
-│   ├── product_details.html
-│   ├── settings.html
-│   ├── Sign_UP.html
+│ ├── Checkoutdetails.html
+│ ├── comments.html
+│ ├── ForgotPassword.html
+│ ├── Login.html
+│ ├── PrintOrder.html
+│ ├── ProceedToBuy.html
+│ ├── products_list.html
+│ ├── product_details.html
+│ ├── settings.html
+│ ├── Sign_UP.html
 ├── index.html
 ├── products.json
 └── README.md
@@ -174,7 +205,7 @@ BuySpot_Store/
 1- **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/BuySpot_Store.git
+git clone https://github.com/OmarrSakr/BuySpot-Store.git
 ```
 
 2- **Navigate to the project directory:**
@@ -188,7 +219,7 @@ cd BuySpot_Store
 ```json
 {
   "id": 260,
-  "img": "Assets/img/product/260_result.webp",
+  "img": "assets/img/product/260_result.webp",
   "name": "LEGO Friends Heartlake City",
   "price": 59.99,
   "old_price": 79.0,
@@ -291,19 +322,20 @@ We welcome contributions! To contribute:
 2- **Create a new branch**
 
 ```bash
-git checkout -b feature/your-feature-name
+git checkout -b feature/your-feature-name 
 ```
 
 3- **Commit changes:**
 
 ```bash
-git commit -m 'Add new feature'
+git add .
+git commit -m "Add: short description of the feature" 
 ```
 
 4- **Push to the branch:**
 
 ```bash
-git push origin feature/your-feature-name
+git push origin feature/your-feature-name    
 ```
 
 5- Submit a Pull Request.
