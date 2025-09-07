@@ -54,6 +54,8 @@ With a **`responsive UI`**, and interactive features like **`search autocomplete
   <!-- Row 6 -->
   <br>
   <img src="./assets/img/screenshots/BuySpot16.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot17.png" width="250">
+  <img src="./assets/img/screenshots/BuySpot18.png" width="250">
 
 </div>
 
