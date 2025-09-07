@@ -1,4 +1,3 @@
-
 <div align="center">
 
 # 🛍️ BuySpot Store - Your Ultimate E-Commerce Experience
@@ -333,4 +332,5 @@ Please use the **GitHub issue tracker** or contact:
 
 Licensed under the **MIT License**.  
 See the [LICENSE](./LICENSE) file for details.
+
 
