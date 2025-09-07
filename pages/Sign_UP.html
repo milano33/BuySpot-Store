@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>انشاء حساب - BuySpot Store</title>
+    <!-- Browser Icon -->
+    <link rel="icon" href="../assets/img/icon.png">
+
+    <!-- Fonts CSS File (Font Awesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- Style CSS File -->
+    <link rel="stylesheet" href="../assets/CSS/Signup_Login.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <!-- Logo -->
+                <a href="../index.html" class="logo">
+                    <img src="../assets/img/logo.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-col">
+        <main class="flex-1 flex items-center justify-center">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Sign in or create an account</h2>
+                </div>
+                <div class="card-content">
+                    <form id="registerForm" class="space-y-4" action="">
+                        <!-- Profile Image Upload -->
+                        <div class="space-y-2">
+                            <label for="profileImage">Profile Picture (Optional)</label>
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="relative">
+                                    <div
+                                        class="w-24 h-24 rounded-full border-2 border-dashed border-muted flex items-center justify-center overflow-hidden bg-muted">
+                                        <i class="fas fa-camera w-6 h-6 text-muted-foreground" id="cameraIcon"></i>
+                                        <img id="profileImagePreview" src="" alt="Preview"
+                                            class="w-full h-full object-cover hidden">
+                                    </div>
+                                    <input id="profileImage" type="file" accept="image/*"
+                                        class="absolute opacity-0 cursor-pointer" />
+                                </div>
+                                <button type="button" class="btn-outline btn-sm"
+                                    onclick="document.getElementById('profileImage').click()">
+                                    <i class="fas fa-upload w-4 h-4 ml-2"></i>
+                                    Upload Image
+                                </button>
+                            </div>
+                            <p id="imageError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- First Name -->
+                        <div class="space-y-2">
+                            <label for="firstName">First Name</label>
+                            <div class="input-container">
+                                <input id="firstName" type="text" placeholder="First Name" spellcheck="false" />
+                                <i class="fas fa-user icon" id="userIconFirstName"></i>
+                                <i class="fa-solid fa-xmark icon hidden cursor-pointer" id="clearFirstNameIcon"></i>
+                            </div>
+                            <p id="firstNameError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="space-y-2">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-container">
+                                <input id="lastName" type="text" placeholder="Last Name" spellcheck="false" />
+                                <i class="fas fa-user icon" id="userIconLastName"></i>
+                                <i class="fa-solid fa-xmark icon hidden cursor-pointer" id="clearLastNameIcon"></i>
+                            </div>
+                            <p id="lastNameError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="space-y-2">
+                            <label for="email">Email Address</label>
+                            <div class="input-container">
+                                <input id="email" type="email" placeholder="Example@email.com" spellcheck="false" />
+                                <i class="fas fa-envelope icon" id="envelopeIcon"></i>
+                                <i class="fa-solid fa-xmark icon hidden cursor-pointer" id="clearEmailIcon"></i>
+                            </div>
+                            <p id="emailError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="space-y-2">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-container">
+                                <input id="phone" type="tel" placeholder="+20 10 123 45678" spellcheck="false" />
+                                <i class="fas fa-phone icon" id="phoneIcon"></i>
+                                <i class="fa-solid fa-xmark icon hidden cursor-pointer" id="clearPhoneIcon"></i>
+                            </div>
+                            <p id="phoneError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="space-y-2">
+                            <label for="password">Password</label>
+                            <div class="input-container">
+                                <input id="password" type="password" placeholder="Password" spellcheck="false" />
+                                <i class="fas fa-eye icon cursor-pointer" onclick="togglePassword('password')"></i>
+                            </div>
+                            <p id="passwordError" class="error-message hidden"></p>
+
+                            <!-- Strength text -->
+                            <div class="password-strength-text hidden" id="passwordStrengthText">
+                                <span><i class="fa-solid fa-shield-halved"></i> Password strength:</span>
+                                <span id="strengthValue"></span>
+                            </div>
+
+                            <!-- Strength bar -->
+                            <div class="password-strength hidden" id="passwordStrengthBox">
+                                <div class="password-strength-background">
+                                    <div class="password-strength-bar" id="passwordStrength"></div>
+                                </div>
+                            </div>
+
+                            <!-- Password requirements checklist -->
+                            <div class="password-requirements hidden" id="passwordRequirements">
+                                <ul class="req-list">
+                                    <li id="req-length"><i class="far fa-circle"></i> At least 8 characters</li>
+                                    <li id="req-uppercase"><i class="far fa-circle"></i> Uppercase letter</li>
+                                    <li id="req-lowercase"><i class="far fa-circle"></i> Lowercase letter</li>
+                                    <li id="req-number"><i class="far fa-circle"></i> Number</li>
+                                    <li id="req-special"><i class="far fa-circle"></i> Special character</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="space-y-2">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-container">
+                                <input id="confirmPassword" type="password" placeholder="Confirm Password"
+                                    spellcheck="false" />
+                                <i class="fas fa-eye icon cursor-pointer"
+                                    onclick="togglePassword('confirmPassword')"></i>
+                            </div>
+                            <p id="confirmPasswordError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- Button Create -->
+                        <button type="submit" class="btn-primary" id="submitBtn">
+                            Create Account
+                        </button>
+                    </form>
+
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-muted">
+                            Already have an account?
+                            <a href="./Login.html" class="text-primary hover:underline">
+                                Login here
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/JS/user-data-sync.js"></script>
+    <script src="../assets/JS/Signup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+/* Print Order Styles */
+:root {
+    --main_color: #0073aa;
+    --fs-color-alert: #b20000;
+    --border_color: #ccc;
+    --white_color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+    background: #f5f5f5;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.print-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--white_color);
+    border: 1px solid var(--border_color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    color: var(--main_color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.print-container>p {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-details,
+.billing-details,
+.terms-conditions {
+    margin-bottom: 30px;
+}
+
+.order-details h2,
+.billing-details h2,
+.terms-conditions h2 {
+    font-size: 20px;
+    color: var(--main_color);
+    border-bottom: 1px solid var(--border_color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.order-details p,
+.billing-details p,
+.terms-conditions p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.order-details p strong,
+.billing-details p strong,
+.terms-conditions p strong {
+    color: #333;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.order-table th,
+.order-table td {
+    border: 1px solid var(--border_color);
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.order-table th {
+    background: var(--main_color);
+    color: var(--white_color);
+    font-weight: bold;
+}
+
+/* .order-table tfoot td {
+    font-weight: bold;
+} */
+
+#Tax {
+    text-align: center;
+}
+
+#discount {
+    color: #0b7b3c;
+    /* Green color for discount */
+}
+
+#shipping {
+    color: #d35400;
+    /* Orange color for shipping */
+}
+
+#order-notes {
+    color: #555;
+}
+
+#billing-address2:empty,
+#order-notes:empty {
+    display: none;
+}
+
+.terms-conditions.rtl {
+    direction: rtl;
+}
+
+.terms-conditions.ltr {
+    direction: ltr;
+}
+
+.terms-conditions {
+    page-break-inside: avoid;
+}
+
+#print-button,
+#back-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#print-button {
+    background: var(--main_color);
+    color: var(--white_color);
+}
+
+#print-button:hover {
+    background: #005f8b;
+}
+
+#back-button {
+    background: #555;
+    color: var(--white_color);
+}
+
+#back-button:hover {
+    background: #333;
+}
+
+/* Print-specific styles */
+@media print {
+    body {
+        background: none;
+    }
+
+    .print-container {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    #print-button,
+    #back-button {
+        display: none;
+    }
+
+    .order-table,
+    .order-details,
+    .billing-details,
+    .terms-conditions {
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .print-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .order-table th,
+    .order-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #print-button,
+    #back-button {
+        width: 100%;
+    }
+}

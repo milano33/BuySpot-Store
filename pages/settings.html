@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>BuySpot | إعدادات الحساب</title>
+    <!-- Browser Icon -->
+    <link rel="icon" href="../assets/img/icon.png">
+    <!-- Fonts CSS File (Font Awesome Cdn) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Style CSS File -->
+    <link rel="stylesheet" href="../assets/CSS/settingsProfile.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/img/logo.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-info">
+                <div class="avatar-container" onclick="openModal('changeAvatarModal')">
+                    <img id="userAvatar" src="../assets/img/Avatar.webp" alt="User Avatar" class="avatar">
+                    <div class="avatar-overlay">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+                <div class="name" id="userName"></div>
+                <div class="email" id="userEmail"></div>
+            </div>
+            <ul>
+                <!-- زر العودة للصفحة الرئيسية -->
+                <li onclick="goToHome()" class="home-btn"><i class="fa-solid fa-home"></i> العودة للصفحة الرئيسية</li>
+
+                <li class="active setting" onclick="showPersonalInfo()"><i class="fa-solid fa-gear"></i> الإعدادات
+                    العامة</li>
+                <li onclick="showOrders()" class="orders"><i class="fa-solid fa-box"></i> الطلبات السابقة</li>
+                <li onclick="logout()" class="logout"><i class="fa-solid fa-sign-out-alt"></i> تسجيل الخروج من الحساب
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Personal Information -->
+            <div class="card" id="personalInfoCard">
+                <div class="card-header">
+                    <div class="card-title">المعلومات الشخصية</div>
+                    <div>
+                        <button id="editInfoBtn" class="btn btn-outline">
+                            <i class="fa-solid fa-edit"></i> تعديل
+                        </button>
+                        <div id="editActions" style="display: none;">
+                            <button id="cancelEditBtn" class="btn btn-outline">
+                                <i class="fa-solid fa-times"></i> إلغاء
+                            </button>
+                            <button id="saveInfoBtn" class="btn btn-primary">
+                                <i class="fa-solid fa-save"></i> حفظ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="form-group">
+                        <label for="firstNameInput">الاسم الأول</label>
+                        <div class="input-container">
+                            <i class="fas fa-user icon"></i>
+                            <div id="firstNameDisplay" class="display-field"></div>
+                            <input id="firstNameInput" type="text" style="display: none;" autocorrect="off"
+                                spellcheck="false" autocapitalize="off">
+                            <i class="fa-solid fa-check icon hidden cursor-pointer" id="clearFirstNameInputIcon"
+                                onclick="clearInput('firstNameInput')"></i>
+                        </div>
+                        <div id="firstNameError" class="error-message" style="display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastNameInput">اسم العائلة</label>
+                        <div class="input-container">
+                            <i class="fas fa-user icon"></i>
+                            <div id="lastNameDisplay" class="display-field"></div>
+                            <input id="lastNameInput" type="text" style="display: none;" autocorrect="off"
+                                spellcheck="false" autocapitalize="off">
+                            <i class="fa-solid fa-check icon hidden cursor-pointer" id="clearLastNameInputIcon"
+                                onclick="clearInput('lastNameInput')"></i>
+                        </div>
+                        <div id="lastNameError" class="error-message" style="display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <div class="input-container">
+                            <i class="fas fa-envelope icon"></i>
+                            <div id="emailDisplay" class="display-field"></div>
+                            <input id="emailInput" type="email" style="display: none;" autocorrect="off"
+                                spellcheck="false" autocapitalize="off">
+                        </div>
+                        <div id="emailError" class="error-message" style="display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <div class="input-container">
+                            <i class="fas fa-phone icon"></i>
+                            <div id="phoneDisplay" class="display-field"></div>
+                            <input id="phoneInput" type="tel" style="display: none;" autocorrect="off"
+                                spellcheck="false" autocapitalize="off">
+                        </div>
+                        <div id="phoneError" class="error-message" style="display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">العنوان</label>
+                        <div class="input-container">
+                            <i class="fas fa-map-marker-alt icon" style="margin-left: -3px;"></i>
+                            <div id="addressDisplay" class="display-field"></div>
+                            <input id="addressInput" type="text" style="display: none;" autocorrect="off"
+                                spellcheck="false" autocapitalize="off">
+                        </div>
+                        <div id="addressError" class="error-message" style="display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="governorate">المحافظة</label>
+                        <div class="input-container">
+                            <i class="fas fa-city icon"></i>
+                            <div id="governorateDisplay" class="display-field"></div>
+                            <input id="governorateInput" type="text" style="display: none;" autocorrect="off"
+                                spellcheck="false" autocapitalize="off">
+                        </div>
+                        <div id="governorateError" class="error-message" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="card" id="securityCard">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-key"></i> إعدادات الأمان</div>
+                </div>
+                <div class="card-content">
+                    <button id="changePasswordBtn" class="btn btn-outline" style="width: 100%; text-align: right;">
+                        <i class="fa-solid fa-key" style="margin-left: 6px;"></i> تغيير كلمة المرور
+                    </button>
+                    <button id="changeEmailBtn" class="btn btn-outline"
+                        style="width: 100%; text-align: right; margin: 10px 0;">
+                        <i class="fa-solid fa-envelope" style="margin-left: 6px;"></i> تغيير البريد الإلكتروني
+                    </button>
+                    <button id="deleteAccountBtn" class="btn btn-destructive" style="width: 100%; text-align: right;">
+                        <i class="fa-solid fa-trash"></i> حذف الحساب
+                    </button>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <div class="card" id="ordersCard" style="display: none;">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-box"></i> الطلبات السابقة</div>
+                </div>
+                <div class="card-content">
+                    <div class="form-group">
+                        <label for="orderSearch">ابحث عن طلب</label>
+                        <div class="input-container">
+                            <i class="fas fa-search icon"></i>
+                            <input id="orderSearch" type="text" placeholder="ابحث برقم الطلب أو التاريخ">
+                        </div>
+                    </div>
+                    <div id="ordersList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Avatar Modal -->
+    <div id="changeAvatarModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">تغيير الصورة الشخصية</div>
+                <button class="modal-close" onclick="closeModal('changeAvatarModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="avatarInput">اختر صورة جديدة</label>
+                <input id="avatarInput" type="file" accept="image/*">
+                <img id="avatarPreview" class="avatar-preview" src="../assets/img/Avatar.webp" alt="Preview">
+                <div id="avatarError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <div id="avatarSpinner" class="spinner"></div>
+                <button class="btn btn-outline" onclick="closeModal('changeAvatarModal')">إلغاء</button>
+                <button id="updateAvatarBtn" class="btn btn-primary">تحديث الصورة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">تغيير كلمة المرور</div>
+                <button class="modal-close" onclick="closeModal('changePasswordModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="currentPassword">كلمة المرور الحالية</label>
+                <div class="input-container">
+                    <i class="fas fa-lock icon"></i>
+                    <input id="currentPassword" type="password">
+                    <i class="fas fa-eye icon" onclick="togglePassword('currentPassword')"></i>
+                </div>
+                <div id="currentPasswordError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">كلمة المرور الجديدة</label>
+                <div class="input-container">
+                    <i class="fas fa-lock icon"></i>
+                    <input id="newPassword" type="password">
+                    <i class="fas fa-eye icon" onclick="togglePassword('newPassword')"></i>
+                </div>
+                <div id="newPasswordError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">تأكيد كلمة المرور</label>
+                <div class="input-container">
+                    <i class="fas fa-lock icon"></i>
+                    <input id="confirmPassword" type="password">
+                    <i class="fas fa-eye icon" onclick="togglePassword('confirmPassword')"></i>
+                </div>
+                <div id="confirmPasswordError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <a href="#" id="forgotPasswordLink" style="color: var(--main_color); font-size: 14px;">نسيت كلمة
+                    المرور؟</a>
+            </div>
+            <div class="modal-footer">
+                <div id="passwordSpinner" class="spinner"></div>
+                <button class="btn btn-outline" onclick="closeModal('changePasswordModal')">إلغاء</button>
+                <button id="updatePasswordBtn" class="btn btn-primary">تحديث كلمة المرور</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">إعادة تعيين كلمة المرور</div>
+                <button class="modal-close" onclick="closeModal('forgotPasswordModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="resetEmail">البريد الإلكتروني</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope icon"></i>
+                    <input id="resetEmail" type="email">
+                </div>
+                <div id="resetEmailError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <div id="resetSpinner" class="spinner"></div>
+                <button class="btn btn-outline" onclick="closeModal('forgotPasswordModal')">إلغاء</button>
+                <button id="sendResetLinkBtn" class="btn btn-primary">إرسال رابط إعادة التعيين</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Email Modal -->
+    <div id="changeEmailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">تغيير البريد الإلكتروني</div>
+                <button class="modal-close" onclick="closeModal('changeEmailModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="currentEmail">البريد الإلكتروني الحالي</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope icon"></i>
+                    <input id="currentEmail" type="email" disabled>
+                </div>
+                <div id="currentEmailError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <label for="emailPassword">كلمة المرور</label>
+                <div class="input-container">
+                    <i class="fas fa-lock icon"></i>
+                    <input id="emailPassword" type="password">
+                    <i class="fas fa-eye icon" onclick="togglePassword('emailPassword')"></i>
+                </div>
+                <div id="emailPasswordError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <label for="newEmail">البريد الإلكتروني الجديد</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope icon"></i>
+                    <input id="newEmail" type="email">
+                    <i class="fa-solid fa-check icon hidden" id="clearNewEmailIcon"
+                        onclick="clearInput('newEmail')"></i>
+                </div>
+                <div id="newEmailError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <div id="emailSpinner" class="spinner"></div>
+                <button class="btn btn-outline" onclick="closeModal('changeEmailModal')">إلغاء</button>
+                <button id="updateEmailBtn" class="btn btn-primary">تحديث البريد الإلكتروني</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div id="deleteAccountModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">حذف الحساب نهائيًا</div>
+                <button class="modal-close" onclick="closeModal('deleteAccountModal')">&times;</button>
+            </div>
+            <div class="warning">
+                هذا الإجراء لا يمكن التراجع عنه. سيتم حذف جميع بياناتك الشخصية ولن تتمكن من استردادها.
+            </div>
+            <div class="form-group">
+                <label for="deletePassword">كلمة المرور الحالية</label>
+                <div class="input-container">
+                    <i class="fas fa-lock icon"></i>
+                    <input id="deletePassword" type="password">
+                    <i class="fas fa-eye icon" onclick="togglePassword('deletePassword')"></i>
+                </div>
+                <div id="deletePasswordError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmDelete">اكتب "DELETE" للتأكيد</label>
+                <div class="input-container">
+                    <i class="fas fa-exclamation-circle icon"></i>
+                    <input id="confirmDelete" type="text">
+                    <i class="fa-solid fa-check icon hidden" id="clearConfirmDeleteIcon"
+                        onclick="clearInput('confirmDelete')"></i>
+                </div>
+                <div id="confirmDeleteError" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <div id="deleteSpinner" class="spinner"></div>
+                <button class="btn btn-outline" onclick="closeModal('deleteAccountModal')">إلغاء</button>
+                <button id="deleteAccountConfirmBtn" class="btn btn-destructive">حذف الحساب نهائيًا</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div id="orderDetailsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">تفاصيل الطلب</div>
+                <button class="modal-close" onclick="closeModal('orderDetailsModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="orderDetailsContent">
+                <!-- Order details will be dynamically populated here -->
+            </div>
+            <div class="modal-footer"
+                style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center;">
+                <!-- Spinner على اليسار -->
+                <div id="orderSpinner" class="spinner" style="margin-right: auto;"></div>
+
+                <!-- قائمة الحالة -->
+                <select id="orderStatusSelect" class="form-select"
+                    style="min-width: 180px; padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px;">
+                    <option value="Pending">قيد المعالجة</option>
+                    <option value="Shipped">تم الشحن</option>
+                    <option value="Delivered">تم التوصيل</option>
+                </select>
+
+                <!-- الأزرار -->
+                <div style="display: flex; gap: 10px;">
+                    <button id="updateStatusBtn" class="btn btn-primary"
+                        style="background-color: #ff8716; border-color: #ff8716;">تحديث الحالة</button>
+                    <button id="emailOrderBtn" class="btn btn-secondary"
+                        style="background-color: #4CAF50; border-color: #4CAF50; color: white;">إرسال إلى البريد
+                        الإلكتروني</button>
+                    <button class="btn btn-outline" onclick="closeModal('orderDetailsModal')">إغلاق</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../assets/JS/user-data-sync.js"></script>
+    <script src="../assets/JS/settings.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

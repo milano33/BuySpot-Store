@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>BuySpot | Print Order</title>
+    <!-- Browser Icon -->
+    <link rel="icon" href="../assets/img/icon.png">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../assets/CSS/PrintOrder.css">
+    <!-- html2canvas and jsPDF -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="print-container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Here are your order details:</p>
+        <div class="order-details">
+            <h2>Order Summary</h2>
+            <p><strong>Order Number:</strong> <span id="order-number"></span></p>
+            <p><strong>Order Date:</strong> <span id="order-date"></span></p>
+            <p><strong>Payment Method:</strong> Cash on Delivery</p>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items"></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Subtotal:</td>
+                        <td id="subtotal"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Discount:</td>
+                        <td id="discount"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Shipping:</td>
+                        <td id="shipping"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>Total:</strong></td>
+                        <td><strong id="total"></strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" id="Tax">*Prices include VAT (14%)</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p><strong>Order Notes:</strong> <span id="order-notes">No notes</span></p>
+        </div>
+        <div class="billing-details">
+            <h2>Billing Address</h2>
+            <p id="billing-name"></p>
+            <p id="billing-address"></p>
+            <p id="billing-address2"></p>
+            <p id="billing-city"></p>
+            <p id="billing-governorate"></p>
+            <p id="billing-postcode"></p>
+            <p id="billing-phone"></p>
+            <p id="billing-email"></p>
+        </div>
+        <div class="terms-conditions" id="terms-conditions">
+            <h2 id="terms-title"></h2>
+            <p id="term-1"></p>
+            <p id="term-2"></p>
+            <p id="term-3"></p>
+            <p id="term-4"></p>
+        </div>
+        <button id="print-button" aria-label="Print Order">Print</button>
+        <a href="../index.html"><button id="back-button" aria-label="Back to Home"><i
+                    class="fa-solid fa-circle-left mr-2"></i> Back</button></a>
+    </div>
+
+    <script src="../assets/JS/PrintOrder.js"></script>
+    <script src="../assets/JS/Checkoutdetails.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,933 @@
+/* ===============================
+   Imports
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* ===============================
+   Root Variables
+================================= */
+:root {
+    --main_color: #ff8716;
+    /* الأساسي */
+
+    --p_color: #7b7b7b;
+    /* النصوص الثانوية */
+
+    --bg_color: #F3F3F3;
+    /* الخلفية */
+
+    --white_color: #fff;
+    /* أبيض */
+
+    --color_heading: #121416;
+    /* عناوين */
+
+    --border_color: #e5e5e5d5;
+    /* حدود */
+
+    --Sale_color: hsl(0 84.2% 60.2%);
+
+    /* تحذيرات/خصومات */
+
+    /* Theme mappings */
+    --background: var(--bg_color);
+    --foreground: var(--color_heading);
+    --muted: #f8f8f8;
+    --muted-foreground: var(--p_color);
+    --border: var(--border_color);
+    --input: var(--border_color);
+    --ring: var(--main_color);
+    --primary: var(--main_color);
+    --primary-foreground: var(--white_color);
+    --destructive: var(--Sale_color);
+    --destructive-foreground: var(--white_color);
+}
+
+/* ===============================
+   Utilities
+================================= */
+
+.hidden {
+    display: none !important;
+}
+
+.space-y-4>*+* {
+    margin-top: 1rem;
+}
+
+.space-y-2>*+* {
+    margin-top: 0.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-muted {
+    color: var(--muted-foreground);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.hover\:underline:hover {
+    text-decoration: underline;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.rounded-full {
+    border-radius: 55%;
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.border-dashed {
+    border-style: dashed;
+}
+
+.border-muted {
+    border-color: var(--muted-foreground);
+}
+
+.bg-muted {
+    background-color: var(--muted);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-24 {
+    width: 6rem;
+}
+
+.h-24 {
+    height: 6rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.w-6 {
+    width: 1.5rem;
+}
+
+.h-6 {
+    height: 1.5rem;
+}
+
+.w-4 {
+    width: 1rem;
+}
+
+.h-4 {
+    height: 1rem;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-success {
+    color: #10B981;
+}
+
+.bg-success {
+    background-color: #ECFDF5;
+}
+
+.border-success {
+    border-color: #A7F3D0;
+}
+
+/* ===============================
+   Base Styles
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--foreground);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    /* padding: 0 15px; */
+}
+
+header {
+    background-color: var(--white_color);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    box-shadow: 5px 8px 8px #d1d1d13b;
+    z-index: 999;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 1rem 1rem;
+}
+
+header .top-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+header .top-header .logo {
+    width: 180px;
+}
+
+header .top-header .logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid var(--main_color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   Card Component
+================================= */
+.card {
+    width: 100%;
+    max-width: 28rem;
+    background-color: var(--background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    padding: 1.5rem 1.5rem 1rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color_heading);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+@media(max-width:578px) {
+
+    .card-title {
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.25;
+    }
+
+    .card-header {
+        padding: 1rem 0rem;
+    }
+
+
+}
+
+/* ===============================
+   Buttons
+================================= */
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3.125rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background-color: var(--main_color);
+    color: var(--white_color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e3730e;
+}
+
+.btn-outline {
+    padding: 0.375rem 0.75rem;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+}
+
+.btn-outline:hover {
+    background-color: var(--muted);
+}
+
+.btn-ghost {
+    padding: 0.375rem;
+    background-color: transparent;
+    border: none;
+    color: var(--foreground);
+}
+
+.btn-ghost:hover {
+    background-color: transparent;
+}
+
+.btn-sm {
+    height: 2rem;
+    font-size: 0.875rem;
+}
+
+
+/* ===============================
+   Forms & Inputs
+================================= */
+label {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.input-container {
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 0.625rem 2.5rem 0.625rem 0.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--input);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0px 0px 3px 1px var(--primary);
+}
+
+input.error {
+    border-color: var(--destructive);
+}
+
+.icon {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.75rem;
+    height: 1rem;
+    width: 1rem;
+    color: var(--muted-foreground);
+}
+
+.error-message {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color: var(--destructive);
+}
+
+
+
+/* ===============================
+   Password Requirements
+================================= */
+.password-requirements {
+    margin-top: 0.5rem;
+}
+
+/* Input Group */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.input-group .clear-icon {
+    display: none;
+}
+
+.input-group .clear-icon:not(.hidden) {
+    display: block;
+}
+
+.input-group .default-icon.hidden {
+    display: none;
+}
+
+.error-message {
+    color: #ff4d4f;
+    font-size: 14px;
+    margin: 5px 5px 0px;
+    display: none;
+    direction: rtl;
+}
+
+.error-message:not(.hidden) {
+    display: block;
+}
+
+/* Password Strength Bar */
+.password-strength {
+    margin-top: 8px;
+    width: 100%;
+    max-width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.password-strength-background {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.password-strength-bar.weak {
+    background-color: #ff4d4f;
+    /* Red for weak */
+    width: 33%;
+}
+
+.password-strength-bar.medium {
+    background-color: #ffeb3b;
+    /* Yellow for medium */
+    width: 66%;
+}
+
+.password-strength-bar.strong {
+    background-color: #4caf50;
+    /* Green for strong */
+    width: 100%;
+}
+
+.password-strength-label {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Password Requirements Checklist */
+.password-requirements {
+    margin-top: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.password-requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.password-requirements li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.password-requirements li.valid i {
+    color: #4caf50;
+    /* Green for valid */
+}
+
+.password-requirements li.invalid i {
+    color: #ff4d4f;
+    /* Red for invalid */
+}
+
+.hidden {
+    display: none;
+}
+
+/* RTL Support */
+.input-group,
+.password-requirements,
+.password-strength,
+.password-strength-label {
+    direction: rtl;
+}
+
+/* Password Strength Bar */
+.password-strength {
+    margin-top: 8px;
+    width: 100%;
+    max-width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    /* Light gray background */
+}
+
+.password-strength-background {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.password-strength-bar.weak {
+    background-color: #ff4d4f;
+    /* Red for weak */
+    width: 33%;
+}
+
+.password-strength-bar.medium {
+    background-color: #ffeb3b;
+    /* Yellow for medium */
+    width: 66%;
+}
+
+.password-strength-bar.strong {
+    background-color: #4caf50;
+    /* Green for strong */
+    width: 100%;
+}
+
+/* Password Requirements Checklist */
+.password-requirements {
+    margin-top: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.password-requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.password-requirements li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.password-requirements li.valid i {
+    color: #4caf50;
+    /* Green for valid */
+}
+
+.password-requirements li.invalid i {
+    color: #ff4d4f;
+    /* Red for invalid */
+}
+
+.hidden {
+    display: none;
+}
+
+/* RTL Support */
+.password-requirements,
+.password-strength {
+    direction: rtl;
+}
+
+.req-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--p_color);
+}
+
+.req-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 48%;
+    margin-bottom: 0.35rem;
+}
+
+.req-list .valid {
+    color: #10B981;
+}
+
+.req-list i {
+    font-size: 0.6rem;
+    width: 12px;
+    display: inline-block;
+}
+
+.fa-check-circle {
+    color: #10B981;
+}
+
+.input-container input.error-highlight {
+    border-color: #ff4d4f;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+/* ===============================
+   Password Strength
+================================= */
+.password-strength {
+    height: 0.25rem;
+    background-color: var(--muted);
+    border-radius: 0.125rem;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.password-strength-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 6px 0 4px;
+    color: var(--destructive);
+}
+
+.password-strength-text span:nth-of-type(1) {
+    color: var(--muted-foreground);
+}
+
+.password-strength-text i {
+    margin-right: 4px;
+}
+
+.password-strength-background {
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    width: 0%;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Levels */
+.strength-weak {
+    background: #ef4444;
+}
+
+.strength-medium {
+    background: #f59e0b;
+}
+
+.strength-strong {
+    background: #10b981;
+}
+
+.strength-very-strong {
+    background: #047857;
+}
+
+
+/* !=============================== ForgetPassword Page ================================= */
+
+/* ===============================
+   Success Message Styling
+================================= */
+.btn-back-login {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: var(--main_color);
+    color: var(--white_color);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1.5rem;
+    transition: background 0.2s ease;
+    border-radius: 3.125rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+#successMessage {
+    background: var(--white_color);
+    /* الكارت أبيض */
+    border: 1px solid var(--border_color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* العنوان */
+#successMessage h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main_color);
+    /* برتقالي */
+    margin-bottom: 1rem;
+}
+
+.card-content-forget {
+    padding: 0px;
+}
+
+/* النص الأساسي */
+#successMessage p {
+    color: var(--p_color);
+    /* رمادي */
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* الإيميل */
+#successMessage #sentToEmail {
+    display: block;
+    font-weight: 600;
+    color: var(--destructive);
+    /* برتقالي واضح */
+    margin-top: 0.5rem;
+}
+
+/* زر العودة */
+#successMessage .btn-primary {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    background: var(--main_color);
+    color: var(--white_color);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1.5rem;
+    transition: background 0.2s ease;
+    border-radius: 3.125rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+#successMessage .btn-primary:hover {
+    background: #e67610;
+    /* أغمق سنة عند الهوفر */
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 578px) {
+header{
+    padding: 10px;
+}
+    /* ضمان أن الحاوية تملأ العرض بالكامل */
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    header .bottom-header .container .nav-links.active {
+        width: 70%;
+    }
+
+    /* رأس الصفحة - Top Header */
+    header .top-header .container {
+        flex-wrap: wrap;
+        padding: 10px 0;
+        /* تقليل الحشوة لتقليل ارتفاع الهيدر */
+        gap: 10px;
+        /* إضافة تباعد بين العناصر */
+    }
+
+    header .top-header .logo {
+        width: 140px;
+        /* تقليل عرض الشعار */
+    }
+}

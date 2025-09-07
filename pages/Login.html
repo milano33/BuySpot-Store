@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>تسجيل الدخول- BuySpot Store</title>
+    <!-- Browser Icon -->
+    <link rel="icon" href="../assets/img/icon.png">
+
+    <!-- ^ Fonts CSS File (Font AweSome Cdn)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- ^ Style CSS File -->
+    <link rel="stylesheet" href="../assets/CSS/Signup_Login.css">
+
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <!-- Logo -->
+                <a href="../index.html" class="logo">
+                    <img src="../assets/img/logo.png" alt="Logo">
+                </a>
+
+                <!-- User Profile -->
+                <!-- <div class="user-profile">
+                    <img id="headerProfileImage" src="../assets/img" alt="User" class="user-avatar hidden">
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <div class="flex flex-col">
+        <main class="flex-1 flex items-center justify-center">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Login</h2>
+                </div>
+                <div class="card-content">
+                    <form id="loginForm" class="space-y-4" action="">
+
+                        <!-- Email Address -->
+                        <div class="space-y-2">
+                            <label for="email">Email</label>
+                            <div class="input-container">
+                                <i class="fas fa-envelope icon" id="envelopeIcon"></i>
+                                <i class="fa-solid fa-xmark icon hidden cursor-pointer" id="clearEmailIcon"></i>
+                                <input id="email" type="email" placeholder="Example@email.com" required
+                                    spellcheck="false" />
+                            </div>
+                            <p id="emailError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="space-y-2">
+                            <label for="password">Password</label>
+                            <div class="input-container">
+                                <input id="password" type="password" placeholder="Enter your password" required
+                                    spellcheck="false" />
+                                <i class="fas fa-eye icon" onclick="togglePassword('password')"
+                                    style="cursor: pointer;"></i>
+                            </div>
+                            <p id="passwordError" class="error-message hidden"></p>
+                        </div>
+
+                        <!-- Forgot Password -->
+                        <div class="flex items-center justify-between">
+                            <a href="../pages/ForgotPassword.html" class="text-sm text-primary hover:underline">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <!-- Button Login -->
+                        <button type="submit" class="btn-primary" id="loginBtn">
+                            Login
+                        </button>
+                    </form>
+
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-muted">
+                            Don’t have an account?
+                            <a href="./Sign_UP.html" class="text-primary hover:underline">
+                                Create new account
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../assets/JS/user-data-sync.js"></script>
+        <script src="../assets/JS/Login.js"></script>
+
+</body>
+
+</html>

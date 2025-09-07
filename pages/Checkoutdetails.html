@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>BuySpot | Checkout details</title>
+    <!-- Browser Icon -->
+    <link rel="icon" href="../assets/img/icon.png">
+
+    <!-- ^ Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+    <!-- ^ Fonts CSS File (Font AweSome Cdn)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+    <!-- ^ Style CSS File -->
+    <link rel="stylesheet" href="../assets/CSS/Secure_Shopping.css">
+
+
+</head>
+
+<body>
+    <!-- Start Header -->
+    <header id="secure_checkout">
+        <div class="top-header">
+            <div class="container">
+                <!-- <a href="../index.html" class="logo"><img src="../assets/img/white_logo.png" alt="BuySpot Logo"></a> -->
+                <h1>Checkout details</h1>
+                <!-- <div class="header-icon">
+                    <div class="icon">
+                        <a href="../pages/ProceedTOBuy.html" class="link" aria-label="View cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count_item_header">0</span>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <section id="secure_checkout" class="secure_checkout checkout">
+        <div class="container">
+            <!-- Customer Info / Sidebar -->
+            <div class="buyspot">
+                <div class="title">
+                    <h2>Billing & Shipping</h2>
+                </div>
+                <div class="content">
+                    <form id="checkout-form">
+                        <!-- First Name and Last Name -->
+                        <label for="first_name" class="required_field">First Name <abbr class="required"
+                                title="required">*</abbr></label>
+                        <input type="text" id="first_name" placeholder="First Name" required aria-label="First Name"
+                            class="input-text" spellcheck="false">
+                        <p class="error-message hidden"></p>
+
+                        <label for="last_name" class="required_field">Last Name <abbr class="required"
+                                title="required">*</abbr></label>
+                        <input type="text" id="last_name" placeholder="Last Name" required aria-label="Last Name"
+                            class="input-text" spellcheck="false">
+                        <p class="error-message hidden"></p>
+
+                        <!-- Address -->
+                        <label for="address" class="required_field">Street Address <abbr class="required"
+                                title="required">*</abbr></label>
+                        <input type="text" id="address" placeholder="House number, street" required
+                            aria-label="Street Address" class="input-text" spellcheck="false">
+                        <p class="error-message hidden"></p>
+
+                        <label for="address_2">Apartment, suite, unit, etc. (optional)</label>
+                        <input type="text" id="address_2" placeholder="Apartment, suite, unit, etc."
+                            aria-label="Additional Address" class="input-text">
+                        <p class="error-message hidden"></p>
+
+                        <!-- Governorate -->
+                        <p class="form-row address-field form-row-wide wooccm-field wooccm-field-governorate wooccm-type-select address-field validate-required"
+                            id="billing_governorate_field" data-priority="60">
+                            <label for="Governorate" class="required_field">Governorate <abbr class="required"
+                                    title="required">*</abbr></label>
+                            <span class="woocommerce-input-wrapper">
+                                <select id="Governorate" required aria-label="Select Governorate" class="input-text">
+                                    <option value="">اختر المحافظة</option>
+                                    <option value="الاسكندرية" data-shipping="70">الاسكندرية - 70 EGP</option>
+                                    <option value="أسيوط" data-shipping="85">أسيوط - 85 EGP</option>
+                                    <option value="أسوان" data-shipping="90">أسوان - 90 EGP</option>
+                                    <option value="بحيرة" data-shipping="65">بحيرة - 65 EGP</option>
+                                    <option value="بني سويف" data-shipping="75">بني سويف - 75 EGP</option>
+                                    <option value="القاهرة" data-shipping="50">القاهرة - 50 EGP</option>
+                                    <option value="دمياط" data-shipping="70">دمياط - 70 EGP</option>
+                                    <option value="دقهلية" data-shipping="70">دقهلية - 70 EGP</option>
+                                    <option value="فيوم" data-shipping="75">فيوم - 75 EGP</option>
+                                    <option value="الغربية" data-shipping="65">الغربية - 65 EGP</option>
+                                    <option value="الجيزة" data-shipping="60">الجيزة - 60 EGP</option>
+                                    <option value="الإسماعيلية" data-shipping="70">الإسماعيلية - 70 EGP</option>
+                                    <option value="كفر الشيخ" data-shipping="65">كفر الشيخ - 65 EGP</option>
+                                    <option value="الأقصر" data-shipping="90">الأقصر - 90 EGP</option>
+                                    <option value="مطروح" data-shipping="95">مطروح - 95 EGP</option>
+                                    <option value="منيا" data-shipping="80">منيا - 80 EGP</option>
+                                    <option value="المنوفية" data-shipping="65">المنوفية - 65 EGP</option>
+                                    <option value="الوادي الجديد" data-shipping="100">الوادي الجديد - 100 EGP</option>
+                                    <option value="شمال سيناء" data-shipping="95">شمال سيناء - 95 EGP</option>
+                                    <option value="بورسعيد" data-shipping="70">بورسعيد - 70 EGP</option>
+                                    <option value="قليوبية" data-shipping="60">قليوبية - 60 EGP</option>
+                                    <option value="قنا" data-shipping="85">قنا - 85 EGP</option>
+                                    <option value="البحر الأحمر" data-shipping="95">البحر الأحمر - 95 EGP</option>
+                                    <option value="الشرقية" data-shipping="65">الشرقية - 65 EGP</option>
+                                    <option value="سوهاج" data-shipping="85">سوهاج - 85 EGP</option>
+                                    <option value="جنوب سيناء" data-shipping="95">جنوب سيناء - 95 EGP</option>
+                                    <option value="السويس" data-shipping="70">السويس - 70 EGP</option>
+                                </select>
+                            </span>
+                        <p class="error-message hidden"></p>
+                        </p>
+
+                        <!-- City -->
+                        <p class="form-row address-field form-row-wide wooccm-field wooccm-field-city wooccm-type-select address-field validate-required"
+                            id="billing_city_field" data-priority="70">
+                            <label for="billing_city" class="required_field">City <abbr class="required"
+                                    title="required">*</abbr></label>
+                            <span class="woocommerce-input-wrapper">
+                                <select id="billing_city" name="billing_city" required aria-label="Select City"
+                                    class="input-text" disabled>
+                                    <option value="">اختر المدينة</option>
+                                </select>
+                            </span>
+                        <p class="error-message hidden"></p>
+                        </p>
+
+                        <!-- Postcode -->
+                        <p class="form-row address-field form-row-wide wooccm-field wooccm-field-postcode wooccm-type-text address-field validate-postcode validate-required"
+                            id="billing_postcode_field" data-priority="80">
+                            <label for="billing_postcode" class="required_field">Postcode / ZIP <abbr class="required"
+                                    title="required">*</abbr></label>
+                            <span class="woocommerce-input-wrapper">
+                                <input type="text" class="input-text wooccm-required-field" name="billing_postcode"
+                                    id="billing_postcode" placeholder="" value="" data-required="1" aria-required="true"
+                                    autocomplete="postal-code" required>
+                            </span>
+                        <p class="error-message hidden"></p>
+                        </p>
+
+                        <!-- Phone -->
+                        <label for="phone" class="required_field">Phone <abbr class="required"
+                                title="required">*</abbr></label>
+                        <input type="text" id="phone" placeholder="+20 1012345678" required aria-label="Phone Number"
+                            class="input-text">
+                        <p class="error-message hidden"></p>
+
+                        <!-- Email -->
+                        <label for="email" class="required_field">Email <abbr title="required">*</abbr></label>
+                        <input type="text" id="email" placeholder="examplexxx@gmail.com" aria-label="Email Address"
+                            class="input-text">
+                        <p class="error-message hidden"></p>
+
+                        <!-- Coupon -->
+                        <label for="coupon" class="coupon">Coupon Code</label>
+                        <input type="text" id="coupon" placeholder="Enter Coupon" aria-label="Coupon Code"
+                            class="input-text">
+                        <p class="shipping-msg" id="coupon-msg"></p>
+
+                        <!-- Order Notes -->
+                        <label for="order_comments">Order Notes</label>
+                        <textarea name="order_comments" id="order_comments"
+                            placeholder="Notes about your order, e.g. special notes for delivery." rows="3"
+                            aria-label="Order Notes" class="input-text" spellcheck="false"></textarea>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Order Summary -->
+            <div class="ordersummary">
+                <h1>Your order</h1>
+                <div class="items" id="checkout_items">
+                    <!-- المنتجات هتتحمل هنا عن طريق JS -->
+                </div>
+
+                <div class="bottom_summary">
+                    <div class="shop_table">
+                        <p>Subtotal:</p>
+                        <span id="subtotal" class="subtotal-checkout">EGP 0</span>
+                    </div>
+                    <div class="shop_table">
+                        <p>Discount:</p>
+                        <span id="discount">EGP 0</span>
+                    </div>
+                    <div class="shop_table">
+                        <p>Shipping:</p>
+                        <span id="shipping-cost">FREE</span>
+                    </div>
+                    <div class="shop_table">
+                        <p>Total:</p>
+                        <span id="total-checkout">EGP 0</span>
+                    </div>
+                    <div class="button_div">
+                        <a href="./PrintOrder.html" type="button" id="place-order" aria-label="Place your order"
+                            class="proceed-btn">Place Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+    <!-- ^ Main Js File -->
+    <script src="../assets/JS/main.js"></script>
+    <script src="../assets/JS/Checkoutdetails.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>
