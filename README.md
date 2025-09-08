@@ -348,14 +348,7 @@ Please follow the Code of Conduct and discuss changes via issues.
 
 💡 Encounter **bugs** or have **suggestions**?  
 Please use the **GitHub issue tracker** or contact:  
-<!DOCTYPE html>
-<html>
-<body>
-  <a href="mailto:DevOmarHussien@gmail.com">
-    <img src="https://img.shields.io/badge/Contact%20Me-Email-blue?style=plastic&logo=gmail" alt="Email Me">
-  </a>
-</body>
-</html>
+[![Email Me](https://img.shields.io/badge/Contact%20Me-Email-blue?style=plastic&logo=gmail)](https://mail.google.com/mail/?view=cm&fs=1&to=DevOmarHussien@gmail.com)
 
 
 
