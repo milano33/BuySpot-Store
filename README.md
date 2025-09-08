@@ -7,7 +7,7 @@
     <tr>
       <td><img class="badge" src="https://img.shields.io/github/stars/OmarrSakr/BuySpot-Store?style=plastic&color=ff8716" alt="GitHub stars"></td>
       <td><img class="badge" src="https://img.shields.io/github/forks/OmarrSakr/BuySpot-Store?style=plastic&color=ff8716" alt="GitHub forks"></td>
-      <td><img class="badge" src="https://komarev.com/ghpvc/?username=OmarrSakr&style=plastic&color=blue&label=Views" alt="Repo Views"></td>
+      <td><img class="badge" src="https://komarev.com/ghpvc/?username=BuySpot-Store&style=plastic&color=blue&label=Views" alt="Repo Views"></td>
     </tr>
     <tr>
       <td><img class="badge" src="https://img.shields.io/github/issues-pr/OmarrSakr/BuySpot-Store?color=orange&style=plastic" alt="Pull Requests"></td>
@@ -42,7 +42,7 @@ It allows users to browse **`253 products`**, add items to **`cart`** or **`favo
 ## 📊 Project Stats
 - 🛍️ **Products**: 253
 - ⭐ **Average Rating**: 4.8/5
-- 🌐 **Visitors**: (Add your views count from Insights or hits.sh)
+- 🌐 **Visitors**: <img class="badge" style="vertical-align: middle;" src="https://komarev.com/ghpvc/?username=BuySpot-Store&style=plastic&color=blue&label=Views" alt="Repo Views">
 
 ---
 ## 🧑‍💻 Tech Stack
