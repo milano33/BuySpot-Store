@@ -23,9 +23,10 @@
   <br>
   <b>BuySpot-Store</b>: متجر إلكتروني بسيط وسهل الاستخدام لبيع المنتجات بأمان وسرعة. 🛒
   <br>
-  <a href="https://omarrsakr.github.io/BuySpot-Store" target="_blank">Live Demo</a> •
-  <a href="https://github.com/OmarrSakr/BuySpot-Store/wiki">Documentation</a> •
-  <a href="https://github.com/OmarrSakr/BuySpot-Store/issues">Report Issues</a>
+
+  [BuySpot Store Demo](https://omarrsakr.github.io/BuySpot-Store) •
+  [Documentation](https://github.com/OmarrSakr/BuySpot-Store/wiki) •
+  [Report Issues](https://github.com/OmarrSakr/BuySpot-Store/issues)
 </p>
 <br>
 
