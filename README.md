@@ -112,7 +112,7 @@ It allows users to browse **`253 products`**, add items to **`cart`** or **`favo
 
 ## 🌐 Live Demo
 
-Check out the live demo of **BuySpot Store** at 👉 [BuySpot Store Demo](omarrsakr.github.io/BuySpot-Store)
+Check out the live demo of **BuySpot Store** at 👉 [BuySpot Store Demo](https://omarrsakr.github.io/BuySpot-Store)
 
 ---
 
@@ -348,9 +348,8 @@ Please follow the Code of Conduct and discuss changes via issues.
 
 💡 Encounter **bugs** or have **suggestions**?  
 Please use the **GitHub issue tracker** or contact:  
-<a href="mailto:DevOmarHussien@gmail.com">
-  <img class="badge" src="https://img.shields.io/badge/Contact%20Me-Email-blue?style=plastic&logo=gmail" alt="Email Me">
-</a>
+[![Email Me](https://img.shields.io/badge/Contact%20Me-Email-blue?style=plastic&logo=gmail)](mailto:DevOmarHussien@gmail.com)
+
 
 
 ---
