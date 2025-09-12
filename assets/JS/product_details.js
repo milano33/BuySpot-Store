@@ -827,7 +827,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('favoritesOpen', 'false');
             localStorage.setItem('menuOpen', 'false');
             localStorage.setItem('searchOpen', 'false');
-            window.location.href = '../pages/ProceedTOBuy.html';
+            window.location.href = '../pages/ProceedToBuy.html';
         });
     }
 
