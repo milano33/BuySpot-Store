@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logoutBtn) {
         logoutBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const redirectUrl = window.location.pathname.includes('pages/') ? "../index.html" : "../../index.html";
+            const redirectUrl = window.location.pathname.includes('pages/') ? "../BuySpot-Store/index.html" : "../../index.html";
             window.userDataManager.handleUserLogout(redirectUrl);
         });
     }
