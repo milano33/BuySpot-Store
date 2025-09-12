@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const backButton = document.getElementById("back-button");
     if (backButton) {
         backButton.addEventListener("click", function () {
-            window.location.href = "../index.html"; // Change to desired page (e.g., ProceedTOBuy.html)
+            window.location.href = "../index.html"; 
         });
     }
 });
