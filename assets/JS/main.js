@@ -443,7 +443,7 @@ function updateCart() {
                     </svg>
                     <p>Your Cart is Empty</p>
                     <p>Fill your cart with BuySpot favorites</p>
-                    <a href="${window.location.pathname.includes('pages/') ? '../../pages/products_list.html' : './index.html'}" class="btn shop-now-btn">Shop Now</a>
+                    <a href="${window.location.pathname.includes('pages/') ? '../pages/products_list.html' : './index.html'}" class="btn shop-now-btn">Shop Now</a>
                 </div>
             `;
         }
