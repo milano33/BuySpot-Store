@@ -198,7 +198,7 @@ class UserDataManager {
         return Object.values(mergedCart);
     }
 
-    async handleUserLogout(redirectUrl = '/index.html') {
+    async handleUserLogout(redirectUrl = '/BuySpot-Store/index.html') {
         const startTime = performance.now();
         try {
             if (this.currentUser?.userId) {
@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logoutBtn) {
         logoutBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const redirectUrl = window.location.pathname.includes('pages/') ? "../index.html" : "../../index.html";
+            const redirectUrl = '/BuySpot-Store/index.html';
             window.userDataManager.handleUserLogout(redirectUrl);
         });
     }

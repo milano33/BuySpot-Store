@@ -387,8 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (logoutBtn) {
             logoutBtn.addEventListener("click", (e) => {
                 e.preventDefault();
-                // console.log(' Logout button clicked');
-                const redirectUrl = window.location.pathname.includes('pages/') ? "../index.html" : "../../index.html";
+                const redirectUrl = '/BuySpot-Store/index.html'; // مسار مطلق
                 window.userDataManager.handleUserLogout(redirectUrl);
             });
         }
