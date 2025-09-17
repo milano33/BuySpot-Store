@@ -165,9 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchForm) {
         searchForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const isGitHubPages = window.location.hostname.includes('github.io');
+            const basePath = isGitHubPages ? '/BuySpot-Store' : '';
             const searchTerm = document.getElementById('search').value.trim();
             const category = document.getElementById('category').value;
-            let url = window.location.pathname.includes('pages/') ? '../pages/products_list.html' : './pages/products_list.html';
+            let url = `${basePath}/pages/products_list.html`;
             if (searchTerm) {
                 url += `?search=${encodeURIComponent(searchTerm)}`;
             }
@@ -182,10 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryListItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
+                const isGitHubPages = window.location.hostname.includes('github.io');
+                const basePath = isGitHubPages ? '/BuySpot-Store' : '';
                 const category = item.textContent.trim();
-                const url = window.location.pathname.includes('pages/')
-                    ? `../pages/products_list.html?category=${encodeURIComponent(category)}`
-                    : `./pages/products_list.html?category=${encodeURIComponent(category)}`;
+                const url = `${basePath}/pages/products_list.html?category=${encodeURIComponent(category)}`;
                 window.location.href = url;
             });
         });
@@ -387,7 +389,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (logoutBtn) {
             logoutBtn.addEventListener("click", (e) => {
                 e.preventDefault();
-                const redirectUrl = '/BuySpot-Store/index.html'; // مسار مطلق
+                // كشف البيئة (local أو GitHub Pages)
+                const isGitHubPages = window.location.hostname.includes('github.io');
+                const basePath = isGitHubPages ? '/BuySpot-Store' : '';
+                const redirectUrl = `${basePath}/index.html`; // هيبقى /BuySpot-Store/index.html على GitHub Pages، و index.html على الـ local
                 window.userDataManager.handleUserLogout(redirectUrl);
             });
         }

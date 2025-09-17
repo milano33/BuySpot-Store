@@ -198,7 +198,7 @@ class UserDataManager {
         return Object.values(mergedCart);
     }
 
-    async handleUserLogout(redirectUrl = '/BuySpot-Store/index.html') {
+    async handleUserLogout(redirectUrl = null) {
         const startTime = performance.now();
         try {
             if (this.currentUser?.userId) {
@@ -241,8 +241,12 @@ class UserDataManager {
                 window.updateAuthUI();
             }
 
+            const isGitHubPages = window.location.hostname.includes('github.io');
+            const basePath = isGitHubPages ? '/BuySpot-Store' : '';
+            const finalRedirectUrl = redirectUrl || `${basePath}/index.html`;
+
             setTimeout(() => {
-                window.location.replace(redirectUrl);
+                window.location.replace(finalRedirectUrl);
             }, 1000);
             const endTime = performance.now();
             // console.log(` handleUserLogout took ${endTime - startTime}ms`);
@@ -583,7 +587,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logoutBtn) {
         logoutBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const redirectUrl = '/BuySpot-Store/index.html';
+            const isGitHubPages = window.location.hostname.includes('github.io');
+            const basePath = isGitHubPages ? '/BuySpot-Store' : '';
+            const redirectUrl = `${basePath}/index.html`;
             window.userDataManager.handleUserLogout(redirectUrl);
         });
     }
