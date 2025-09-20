@@ -121,21 +121,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 const itemDiv = document.createElement("div");
                 itemDiv.className = "item-cart";
                 itemDiv.innerHTML = `
-                    <div class="image_name">
-                        <img src="${imagePath}" alt="${item.name}" onerror="this.src='../assets/fallback-image.jpg'">
-                        <div class="content">
-                            <p class="name-product"><a href="../../pages/product_details.html?id=${item.id}"><h4>${item.name}</h4></a></p>
-                            <p class="price_cart">EGP ${totalPriceItems.toLocaleString('en-EG')}</p>
-                            <div class="quantity_control">
-                                <button class="decrease-quantity" data-index="${index}" aria-label="Decrease quantity of ${item.name}">-</button>
-                                <span class="quantity">${item.quantity}</span>
-                                <button class="increase-quantity" data-index="${index}" aria-label="Increase quantity of ${item.name}">+</button>
-                            </div>
+                <div class="image_name">
+                    <img src="${imagePath}" alt="${item.name}" onerror="this.src='../assets/fallback-image.jpg'">
+                    <div class="content">
+                        <p class="name-product"><a href="../../pages/product_details.html?id=${item.id}"><h4>${item.name}</h4></a></p>
+                        <p class="price_cart">EGP ${totalPriceItems.toLocaleString('en-EG')}</p>
+                        <div class="quantity_control">
+                            <button class="decrease-quantity" data-index="${index}" aria-label="Decrease quantity of ${item.name}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="increase-quantity" data-index="${index}" aria-label="Increase quantity of ${item.name}">+</button>
                         </div>
                     </div>
-                    <button class="delete-item" data-index="${index}" aria-label="Remove ${item.name} from cart"><i class="fa-solid fa-trash-can"></i></button>
-                `;
+                </div>
+                <button class="delete-item" data-index="${index}" aria-label="Remove ${item.name} from cart"><i class="fa-solid fa-trash-can"></i></button>
+            `;
                 checkoutItems.appendChild(itemDiv);
+            });
+
+            // ✅ اربط أزرار الحذف
+            checkoutItems.querySelectorAll(".delete-item").forEach(button => {
+                button.addEventListener("click", (e) => {
+                    const index = e.currentTarget.dataset.index;
+                    deleteFromCart(index);
+                });
             });
 
             subtotalSpan.textContent = `EGP ${subtotal.toLocaleString('en-EG')}`;
@@ -149,6 +157,15 @@ document.addEventListener("DOMContentLoaded", function () {
             placeOrderBtn.disabled = true;
         }
     }
+
+    // ✅ الدالة الجديدة للحذف
+    function deleteFromCart(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        cart = JSON.parse(localStorage.getItem("cart")) || [];
+        updateCartUI();
+    }
+
 
     function updateTotal(discount = 0) {
         const discountAmount = subtotal * discount;

@@ -24,9 +24,10 @@
   <b>BuySpot-Store</b>: متجر إلكتروني بسيط وسهل الاستخدام لبيع المنتجات بأمان وسرعة. 🛒
   <br>
 
-  [BuySpot Store Demo](https://omarrsakr.github.io/BuySpot-Store) •
-  [Documentation](https://github.com/OmarrSakr/BuySpot-Store/wiki) •
-  [Report Issues](https://github.com/OmarrSakr/BuySpot-Store/issues)
+[BuySpot Store Demo](https://omarrsakr.github.io/BuySpot-Store) •
+[Documentation](https://github.com/OmarrSakr/BuySpot-Store/wiki) •
+[Report Issues](https://github.com/OmarrSakr/BuySpot-Store/issues)
+
 </p>
 <br>
 
@@ -40,12 +41,15 @@ It allows users to browse **`253 products`**, add items to **`cart`** or **`favo
 <div align="center">
 
 ## 📊 Project Stats
+
 - 🛍️ **Products**: 253
 - ⭐ **Average Rating**: 4.8/5
 - 🌐 **Visitors**: <img class="badge" style="vertical-align: middle;" src="https://komarev.com/ghpvc/?username=BuySpot-Store&style=plastic&color=blue&label=Views" alt="Repo Views">
 
 ---
+
 ## 🧑‍💻 Tech Stack
+
 <p>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3">
@@ -58,6 +62,7 @@ It allows users to browse **`253 products`**, add items to **`cart`** or **`favo
 ---
 
 ## 📷 Screenshots
+
 <table>
   <tr>
     <td><img src="./assets/img/screenshots/BuySpot1.png" width="200"></td>
@@ -323,20 +328,20 @@ We welcome contributions! To contribute:
 2- **Create a new branch**
 
 ```bash
-git checkout -b feature/your-feature-name 
+git checkout -b feature/your-feature-name
 ```
 
 3- **Commit changes:**
 
 ```bash
 git add .
-git commit -m "Add: short description of the feature" 
+git commit -m "Add: short description of the feature"
 ```
 
 4- **Push to the branch:**
 
 ```bash
-git push origin feature/your-feature-name    
+git push origin feature/your-feature-name
 ```
 
 5- Submit a Pull Request.
@@ -350,11 +355,8 @@ Please follow the Code of Conduct and discuss changes via issues.
 💡 Encounter **bugs** or have **suggestions**?  
 Please use the **GitHub issue tracker** or contact:  
 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=DevOmarHussien@gmail.com" target="_blank">
-  <img src="https://img.shields.io/badge/Contact%20Me-Email-blue?style=plastic&logo=gmail" alt="Email Me"/>
+<img src="https://img.shields.io/badge/Contact%20Me-Email-blue?style=plastic&logo=gmail" alt="Email Me"/>
 </a>
-
-
-
 
 ---
 
@@ -369,6 +371,8 @@ See the [LICENSE](./LICENSE.md) file for details.
 
 **⭐ If you found this project helpful, please give it a star! ⭐**
 
-*Built with ❤️ for the community*
+_Built with ❤️ by Omar Sakr_
+
+[![Follow on GitHub](https://img.shields.io/github/followers/OmarrSakr?style=social)](https://github.com/OmarrSakr)
 
 </div>
